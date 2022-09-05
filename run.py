@@ -51,3 +51,9 @@ def exit():
     os.system('cls' if os.name == 'nt' else 'clear')
     thank_you()
     header()
+
+def loading(seconds):
+    """
+    Makes the program pause for x seconds.
+    """
+    time.sleep(seconds)
