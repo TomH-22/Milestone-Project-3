@@ -244,5 +244,22 @@ def usc():
     else:
         usc = 60.06 + 185.64 + 2193.66 + (0.08 * (int(salary) - 70044))
 
+def summary():
+
+    """
+    Further calculations and data interpretation.
+    Outputs summary via f-string displaying all relevant sums.
+    """
+    clear()
+    total = tax + prsi + usc
+    global net
+    net = int(salary) - total
+    global monthly
+    monthly = net / 12
+    global weekly
+    weekly = net / 52.18
+    print(f"Summary:\n\nBased on your inputs, your tax liability is \033[0;33m{tax:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly:.2f}€\033[00m.\n")
+    end()
+
 
 
