@@ -140,3 +140,26 @@ def name():
             start_options()
             break
 
+def salary():
+
+    """
+    Asks user for salary input, validates same, creates
+    variable and calls tax_credits() function.
+    """
+    while True:
+        global salary
+        salary = input(
+            "What is your gross annual salary in Euros? Please round to the nearest Euro!\n\n")
+        if not salary.isnumeric():
+            clear()
+            print(
+                f"\033[0;31mSorry, {name} - {salary} is not a number. Please enter only numbers!\n\033[00m")
+            continue
+        else:
+            clear()
+            print(
+                f"\033[0;32mGreat, {name}! You said your salary is {salary}€!\n\033[00m")
+            loading(1)
+            tax_credits()
+            break
+
