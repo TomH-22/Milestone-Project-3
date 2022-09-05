@@ -163,3 +163,23 @@ def salary():
             tax_credits()
             break
 
+def tax_credits():
+
+    """
+    Asks user for tax credits input, validates same, creates
+    variable and calls calc() function.
+    """
+    while True:
+        global tax_credits
+        tax_credits = input("What are your tax credits in Euros?\n\n")
+        if not tax_credits.isnumeric():
+            clear()
+            print(f"\033[0;31mSorry, {name} - that is not a number. Please enter only numbers!\n\033[00m")
+            continue
+        else:
+            clear()
+            print(f"\033[0;32mGreat, {name}! You said your tax credits are {tax_credits}€!\n\033[00m")
+            loading(1)
+            calc()
+            break
+
