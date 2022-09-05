@@ -6,9 +6,9 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
-"https://www.googleapis.com/auth/spreadsheets",
-"https://www.googleapis.com/auth/drive.file",
-"https://www.googleapis.com/auth/drive"
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
 ]
 
 CREDS = Credentials.from_service_account_file('creds.json')
@@ -18,17 +18,20 @@ SHEET = GSPREAD_CLIENT.open('Aerarium')
 
 userdata = SHEET.worksheet('userdata')
 
+
 def header():
     """
     Prints the Pyfiglet to the terminal.
     """
     print(pyfiglet.figlet_format("Aerarium"))
 
+
 def subheader():
     """
     Creates a text script below the header.
     """
     print("******* A CALCULATOR FOR TODAY'S WORLD *******\n")
+
 
 def fig_header():
     """
@@ -37,13 +40,15 @@ def fig_header():
     header()
     subheader()
 
+
 def thank_you():
     """
     Prints a goodbye message.
     """
     print("\n\n** THANK YOU FOR USING AERARIUM - GOODBYE! **\n")
 
-def exit():
+
+def exitprog():
     """
     Clears the terminal and compiles the elements
     that make up the exit screen.
@@ -52,11 +57,13 @@ def exit():
     thank_you()
     header()
 
+
 def loading(seconds):
     """
     Makes the program pause for x seconds.
     """
     time.sleep(seconds)
+
 
 def intro():
     """
@@ -66,12 +73,14 @@ def intro():
     print("This is a python-based finance tool which calculates tax-, PRSI- and USC liabilities. \n\nIt is based on the Irish 2021/2022 rates and presently does not account for pension deductions, benefit-in-kind scenarios, carer's allowances etc.\n\nThis tool is meant to be used for indicative purposes only.\n")
     name()
 
+
 def clear():
     """
     Clears the terminal and compiles a new header.
     """
     os.system('cls' if os.name == 'nt' else 'clear')
     fig_header()
+
 
 def start_options():
     """
@@ -98,11 +107,12 @@ def start_options():
             continue
         else:
             clear()
-            print(f"\033[0;32mSounds great!\033[00m\n\nLoading...\n")
+            print("\033[0;32mSounds great!\033[00m\n\nLoading...\n")
             loading(1)
             clear()
             choice()
             break
+
 
 def choice():
     """
@@ -114,6 +124,7 @@ def choice():
     else:
         print(f"Thanks, {name} - let's get your data!\n")
         enter()
+
 
 def name():
 
@@ -140,6 +151,7 @@ def name():
             start_options()
             break
 
+
 def salary():
 
     """
@@ -163,6 +175,7 @@ def salary():
             tax_credits()
             break
 
+
 def tax_credits():
 
     """
@@ -182,6 +195,7 @@ def tax_credits():
             loading(1)
             calc()
             break
+
 
 def calc():
 
@@ -203,6 +217,7 @@ def calc():
     usc()
     summary()
 
+
 def tax():
 
     """
@@ -216,6 +231,7 @@ def tax():
     else:
         tax = 7360 + ((int(salary) - 36800) * 0.4) - int(tax_credits)
 
+
 def prsi():
 
     """
@@ -228,6 +244,7 @@ def prsi():
         prsi = ((int(salary) * 0.04) - (626.26 - ((int(salary) - 18367.36 / 6))))
     else:
         prsi = int(salary) * 0.04
+
 
 def usc():
 
@@ -243,6 +260,7 @@ def usc():
         usc = 60.06 + 185.64 + (0.045 * (int(salary) - 21296))
     else:
         usc = 60.06 + 185.64 + 2193.66 + (0.08 * (int(salary) - 70044))
+
 
 def summary():
 
@@ -260,6 +278,7 @@ def summary():
     weekly = net / 52.18
     print(f"Summary:\n\nBased on your inputs, your tax liability is \033[0;33m{tax:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly:.2f}€\033[00m.\n")
     end()
+
 
 def end():
 
@@ -292,6 +311,7 @@ def end():
             end_option()
             break
 
+
 def pin_create():
 
     """
@@ -317,18 +337,19 @@ def pin_create():
             loading(1)
             break
 
+
 def end_option():
 
     """
     Calls the pin_create() function and compiles relevant
     variable to a list which is appended to the spreadsheet as
     a new row. Then exits the program. If exit was chosen above,
-    it will just call the exit() function without saving data.
+    it will just call the exitprog() function without saving data.
     """
     if int(end_choice) == 1:
         pin_create()
         input("Press Enter to continue.\n")
-        (clear)
+        clear()
         data = [
             name,
             int(pin),
@@ -341,14 +362,14 @@ def end_option():
             weekly,
             int(set_id)]
         print("Saving your data...\n")
-        userdata = SHEET.worksheet('userdata')
         userdata.append_row(data)
         loading(1)
-        print( f"\033[0;32mSuccess, your data has been saved! Exiting program...\033[00m\n\n")
+        print("\033[0;32mSuccess, your data has been saved! Exiting program...\033[00m\n\n")
         loading(1)
-        exit()
+        exitprog()
     else:
-        exit()
+        exitprog()
+
 
 def enter():
     """
@@ -360,9 +381,9 @@ def enter():
         user_data = userdata.col_values(1)
         global set_id
         set_id = len(user_data) - 1
-        global id
-        id = input("Please enter your unique calculation ID:\n\n")
-        if not id.isnumeric() or int(id) > set_id:
+        global ident
+        ident = input("Please enter your unique calculation ID:\n\n")
+        if not ident.isnumeric() or int(ident) > set_id:
             clear()
             print(f"\033[0;31mSorry, {name} - you did not provide a valid ID number. Please enter only numbers!\n\033[00m")
             continue
@@ -372,6 +393,7 @@ def enter():
             pin_input()
             break
 
+
 def pin_input():
     """
     Validates the users pin input against the saved pin and if
@@ -379,7 +401,7 @@ def pin_input():
     """
     while True:
         global saved_pin
-        saved_pin = userdata.cell((int(id) + 1), 2).value
+        saved_pin = userdata.cell((int(ident) + 1), 2).value
         global pin_input
         pin_input = input('Please enter your pin: \n')
         if not pin_input.isnumeric():
@@ -396,13 +418,14 @@ def pin_input():
             access_granted()
             break
 
+
 def access_granted():
     """
     Returns the user's saved data from the spreadsheet row, saves the
     values into variables and then prints a summary of the user's
     data. It then gives the option to exit the program.
     """
-    values = userdata.row_values(int(id) + 1)
+    values = userdata.row_values(int(ident) + 1)
 
     monthly_var = values[7]
     monthly_var_int = float(monthly_var)
@@ -421,9 +444,10 @@ def access_granted():
 
     print(f"Summary of {name_var}'s last calculation:\n\nBased on your inputs, your tax liability is \033[0;33m{tax_var_int:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi_var_int:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc_var_int:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total_var_int:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net_var_int:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly_var_int:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly_var_int:.2f}€\033[00m.\n\n")
     input("Press Enter to exit the program.\n\n")
-    print(f"\033[0;32mExiting program...!\n\nThank you!\033[00m\n\n")
+    print("\033[0;32mExiting program...!\n\nThank you!\033[00m\n\n")
     loading(1)
-    exit()
+    exitprog()
+
 
 fig_header()
 intro()
