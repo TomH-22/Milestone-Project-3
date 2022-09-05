@@ -115,5 +115,28 @@ def choice():
         print(f"Thanks, {name} - let's get your data!\n")
         enter()
 
+def name():
 
+    """
+    Asks user for a name and stores same in variable. Then calls
+    the start_options() function.
+    """
+    while True:
+        global name
+        name_input = input("What is your name?\n\n")
+        name = name_input.upper()
+        if not re.match("^[A-Za-z-hj]*$", name):
+            clear()
+            print("\033[0;31mPlease try again: use letters only!\n\033[00m")
+            continue
+        elif name == '':
+            clear()
+            print("\033[0;31mPlease try again: use letters only!\n\033[00m")
+            continue
+        else:
+            clear()
+            print(f"\033[0;32mThank you, {name}!\033[00m\n")
+            loading(1)
+            start_options()
+            break
 
