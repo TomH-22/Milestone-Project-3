@@ -292,5 +292,29 @@ def end():
             end_option()
             break
 
+def pin_create():
+
+    """
+    Prompts the user to create a pin as part of the data saving process.
+    Also creates a unique ID based on spreadsheet row number. Both of these
+    will be displayed to the user for future reference.
+    """
+    clear()
+    print(f"\033[0;32mGreat {name}! Let's do that!\033[00m\n\n")
+    while True:
+        global pin
+        pin = (input("Enter a 4-digit pin number:\n\n"))
+        if not pin.isnumeric() & (len(str(pin)) == 4):
+            clear()
+            print("\033[0;31mMust only contain 4 numbers! Try again!\n\033[00m")
+            continue
+        else:
+            clear()
+            user_data = userdata.col_values(1)
+            global set_id
+            set_id = len(user_data)
+            print(f"\033[0;32mThank you, {name}, your unique ID is {set_id} and your pin is {pin}! Keep these in a safe place to access your calculation again!\033[00m\n")
+            loading(1)
+            break
 
 
