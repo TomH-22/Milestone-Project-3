@@ -229,5 +229,20 @@ def prsi():
     else:
         prsi = int(salary) * 0.04
 
+def usc():
+
+    """
+    Calculates PRSI based on user inputs.
+    """
+    global usc
+    if int(salary) <= 13000:
+        usc = 0
+    elif int(salary) <= 21295:
+        usc = 60.06 + (0.02 * (int(salary) - 12012))
+    elif int(salary) <= 70044:
+        usc = 60.06 + 185.64 + (0.045 * (int(salary) - 21296))
+    else:
+        usc = 60.06 + 185.64 + 2193.66 + (0.08 * (int(salary) - 70044))
+
 
 
