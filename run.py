@@ -72,3 +72,35 @@ def clear():
     """
     os.system('cls' if os.name == 'nt' else 'clear')
     fig_header()
+
+def start_options():
+    """
+    Displays initial action menu to user and compiles
+    start_choice to variable.
+    """
+    while True:
+        print("What would you like to do?")
+        print("\n1. Make a new calculation.")
+        print("\n2. Retrieve a saved calculation.")
+
+        global start_choice
+        start_choice = input("\nEnter number here: ")
+        if start_choice.isalpha() or start_choice == '':
+            clear()
+            print(f"\n\033[0;31mSorry, {name} - that is not valid! Please enter a number between 1 and 2!\n\033[00m")
+            loading(1)
+            continue
+
+        elif int(start_choice) < 1 or int(start_choice) > 2:
+            clear()
+            print(f"\n\033[0;31mSorry, {name} - that is not valid! Please enter a number between 1 and 2!\n\033[00m")
+            loading(1)
+            continue
+        else:
+            clear()
+            print(f"\033[0;32mSounds great!\033[00m\n\nLoading...\n")
+            loading(1)
+            clear()
+            choice()
+            break
+
