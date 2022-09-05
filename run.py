@@ -371,3 +371,28 @@ def enter():
             print(f"\033[0;32mGreat, {name}! One more step and you're in...!\n\033[00m")
             pin_input()
             break
+
+def pin_input():
+    """
+    Validates the users pin input against the saved pin and if
+    validated calls the access_granted() function.
+    """
+    while True:
+        global saved_pin
+        saved_pin = userdata.cell((int(id) + 1), 2).value
+        global pin_input
+        pin_input = input('Please enter your pin: \n')
+        if not pin_input.isnumeric():
+            clear()
+            print(f"\033[0;31mSorry, {name} - your pin is incorrect. Please try again.\n\033[00m")
+            continue
+        elif not int(saved_pin) == int(pin_input):
+            clear()
+            print(f"\033[0;31mSorry, {name} - your pin is incorrect. Please try again.\n\033[00m")
+            continue
+        else:
+            clear()
+            loading(1)
+            access_granted()
+            break
+
