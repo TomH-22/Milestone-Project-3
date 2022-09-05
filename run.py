@@ -183,3 +183,25 @@ def tax_credits():
             calc()
             break
 
+def calc():
+
+    """
+    Holder function for tax(), prsi(), usc() and summary() functions.
+    Also renders mock loading messages.
+    """
+    clear()
+    print(f"\033[0;32mMaking calculations, {name} - just a sec!\033[00m\n\nLoading.")
+    loading(1)
+    clear()
+    print(f"\033[0;32mMaking calculations, {name} - just a sec!\033[00m\n\nLoading..")
+    loading(1)
+    clear()
+    print(f"\033[0;32mMaking calculations, {name} - just a sec!\033[00m\n\nLoading...")
+    loading(1)
+    tax()
+    prsi()
+    usc()
+    summary()
+
+
+
