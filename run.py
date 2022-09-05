@@ -29,3 +29,10 @@ def subheader():
     Creates a text script below the header.
     """
     print("******* A CALCULATOR FOR TODAY'S WORLD *******\n")
+
+def fig_header():
+    """
+    Prints the header combination to the console.
+    """
+    header()
+    subheader()
