@@ -317,4 +317,35 @@ def pin_create():
             loading(1)
             break
 
+def end_option():
 
+    """
+    Calls the pin_create() function and compiles relevant
+    variable to a list which is appended to the spreadsheet as
+    a new row. Then exits the program. If exit was chosen above,
+    it will just call the exit() function without saving data.
+    """
+    if int(end_choice) == 1:
+        pin_create()
+        input("Press Enter to continue.\n")
+        (clear)
+        data = [
+            name,
+            int(pin),
+            int(salary),
+            tax,
+            prsi,
+            usc,
+            net,
+            monthly,
+            weekly,
+            int(set_id)]
+        print("Saving your data...\n")
+        userdata = SHEET.worksheet('userdata')
+        userdata.append_row(data)
+        loading(1)
+        print( f"\033[0;32mSuccess, your data has been saved! Exiting program...\033[00m\n\n")
+        loading(1)
+        exit()
+    else:
+        exit()
