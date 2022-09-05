@@ -57,3 +57,11 @@ def loading(seconds):
     Makes the program pause for x seconds.
     """
     time.sleep(seconds)
+
+def intro():
+    """
+    Prints info about the program and calls the
+    name() function.
+    """
+    print("This is a python-based finance tool which calculates tax-, PRSI- and USC liabilities. \n\nIt is based on the Irish 2021/2022 rates and presently does not account for pension deductions, benefit-in-kind scenarios, carer's allowances etc.\n\nThis tool is meant to be used for indicative purposes only.\n")
+    name()
