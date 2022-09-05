@@ -42,4 +42,12 @@ def thank_you():
     Prints a goodbye message.
     """
     print("\n\n** THANK YOU FOR USING AERARIUM - GOODBYE! **\n")
-    
+
+def exit():
+    """
+    Clears the terminal and compiles the elements
+    that make up the exit screen.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+    thank_you()
+    header()
