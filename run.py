@@ -65,3 +65,10 @@ def intro():
     """
     print("This is a python-based finance tool which calculates tax-, PRSI- and USC liabilities. \n\nIt is based on the Irish 2021/2022 rates and presently does not account for pension deductions, benefit-in-kind scenarios, carer's allowances etc.\n\nThis tool is meant to be used for indicative purposes only.\n")
     name()
+
+def clear():
+    """
+    Clears the terminal and compiles a new header.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+    fig_header()
