@@ -19,7 +19,13 @@ SHEET = GSPREAD_CLIENT.open('Aerarium')
 userdata = SHEET.worksheet('userdata')
 
 def header():
-  """
-  Prints the Pyfiglet to the terminal.
-  """
-  print(pyfiglet.figlet_format("Aerarium"))
+    """
+    Prints the Pyfiglet to the terminal.
+    """
+    print(pyfiglet.figlet_format("Aerarium"))
+
+def subheader():
+    """
+    Creates a text script below the header.
+    """
+    print("******* A CALCULATOR FOR TODAY'S WORLD *******\n")
