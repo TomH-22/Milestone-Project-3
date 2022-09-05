@@ -424,3 +424,6 @@ def access_granted():
     print(f"\033[0;32mExiting program...!\n\nThank you!\033[00m\n\n")
     loading(1)
     exit()
+
+fig_header()
+intro()
