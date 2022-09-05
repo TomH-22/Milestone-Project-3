@@ -203,5 +203,18 @@ def calc():
     usc()
     summary()
 
+def tax():
+
+    """
+    Calculates tax based on user inputs.
+    """
+    global tax
+    if (int(salary) * 0.2) < int(tax_credits):
+        tax = 0
+    elif int(salary) < 36800:
+        tax = (int(salary) * 0.2) - int(tax_credits)
+    else:
+        tax = 7360 + ((int(salary) - 36800) * 0.4) - int(tax_credits)
+
 
 
