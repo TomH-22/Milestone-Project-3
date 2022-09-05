@@ -216,5 +216,18 @@ def tax():
     else:
         tax = 7360 + ((int(salary) - 36800) * 0.4) - int(tax_credits)
 
+def prsi():
+
+    """
+    Calculates PRSI based on user inputs.
+    """
+    global prsi
+    if int(salary) <= 18367.36:
+        prsi = 0
+    elif int(salary) <= 22124.32:
+        prsi = ((int(salary) * 0.04) - (626.26 - ((int(salary) - 18367.36 / 6))))
+    else:
+        prsi = int(salary) * 0.04
+
 
 
