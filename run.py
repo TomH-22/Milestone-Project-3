@@ -349,3 +349,25 @@ def end_option():
         exit()
     else:
         exit()
+
+def enter():
+    """
+    Asks user to input their unique ID as part of a data
+    retrieval process and validates same, before calling the
+    pin_input() function.
+    """
+    while True:
+        user_data = userdata.col_values(1)
+        global set_id
+        set_id = len(user_data) - 1
+        global id
+        id = input("Please enter your unique calculation ID:\n\n")
+        if not id.isnumeric() or int(id) > set_id:
+            clear()
+            print(f"\033[0;31mSorry, {name} - you did not provide a valid ID number. Please enter only numbers!\n\033[00m")
+            continue
+        else:
+            clear()
+            print(f"\033[0;32mGreat, {name}! One more step and you're in...!\n\033[00m")
+            pin_input()
+            break
