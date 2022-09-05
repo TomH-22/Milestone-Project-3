@@ -104,3 +104,16 @@ def start_options():
             choice()
             break
 
+def choice():
+    """
+    Evaluates start_choice variable and calls either salary()
+    or enter() function.
+    """
+    if int(start_choice) == 1:
+        salary()
+    else:
+        print(f"Thanks, {name} - let's get your data!\n")
+        enter()
+
+
+
