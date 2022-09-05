@@ -261,5 +261,36 @@ def summary():
     print(f"Summary:\n\nBased on your inputs, your tax liability is \033[0;33m{tax:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly:.2f}€\033[00m.\n")
     end()
 
+def end():
+
+    """
+    Menu which gives user the option of saving their data
+    or exiting the program.
+    """
+    while True:
+        print("*************************************************\n")
+        print("What would you like to do now?")
+        print("\n1. Save your Data.")
+        print("\n2. Exit the Program.")
+
+        global end_choice
+        end_choice = input("\nEnter number here: ")
+        if end_choice.isalpha() or end_choice == '':
+            clear()
+            print(f"\n\033[0;31mSorry, {name} - that is not valid! Please enter a number between 1 and 2!\n\033[00m")
+            loading(1)
+            continue
+
+        elif int(end_choice) < 1 or int(end_choice) > 2:
+            clear()
+            print(f"\n\033[0;31mSorry, {name} - that is not valid! Please enter a number between 1 and 2!\n\033[00m")
+            loading(1)
+            continue
+        else:
+            clear()
+            loading(1)
+            end_option()
+            break
+
 
 
