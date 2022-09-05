@@ -36,3 +36,10 @@ def fig_header():
     """
     header()
     subheader()
+
+def thank_you():
+    """
+    Prints a goodbye message.
+    """
+    print("\n\n** THANK YOU FOR USING AERARIUM - GOODBYE! **\n")
+    
