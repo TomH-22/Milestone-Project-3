@@ -58,6 +58,11 @@ As mentioned above, data is stored in a Google Sheet for later retrieval by user
 ### **Personal Touch**
 Great emphasis was placed on user experience, and I felt it was important to provide the user with personalised feedback messages throughout the program's flow: this involved utilising the user's previously inputted name in f-string print reponses and so making the user feel less like they are interacting with a machine.
 
+### **Input Validation**
+Inputs are intelligently handled and validated in real-time. If inputs are not as expected, e.g. if the name contains spaces or numbers, the user is prompted to re-enter the data before being allowed to proceed. This is achieved using while-loops and conditionals. 
+
+![Input Validation](assets/readme/validation.png)
+
 ## **Future Features**
 
 - **Tax Credits and Other Factors** As I specified in the description, the program currently does not take into consideration aspects such as pension deductions or other pre-tax allowances, so this is something that could be added later. Similarly, rather than having the user input their tax-credits, the value could be derived by means of targeted questions, e.g. about marriage status etc.
@@ -65,6 +70,24 @@ Great emphasis was placed on user experience, and I felt it was important to pro
 - **Restarting the Program** I could not find an elegant way of restaring the program to allow for another calculation at this moment in time, and as a result the user will need to reset the program manually if they wish to do so. This is an important feature to be added in the future. 
 
 - **Emailing Data** Another nice feature to implement in future iterations of the program involves prompting the user for an email address and sending the data output to it. 
+
+# **Testing**
+I manually tested the application many times, proceeding through all the flows within the program and ensuring that data is accepted correctly on input and validated accordingly.
+
+I tested the program within several environments such as GitPod, Heroku and Repl.it - all without issue. 
+
+I also utilised various linters, such as Pep8online, to check the code. While a lot of issues were fixed, the program contains a number of - primarily - print statements that exceed the recommended line length of 79 characters. I attempted to fix this but encountered issues due to the f-string placeholders mostly. While this does not impact the program's functionality, it must be addressed to meet Pep8 standards.
+
+## **Bugs**
+### **Solved Bugs**
+- In developing this program I encountered countless bugs, all of which were solved using rigorous manual application testing during development. Most of these involved data validation and conflict between number- and string-based variable data.
+
+### **Unsolved Bugs**
+- When a pin number, consisting of leading zeros is chosen, e.g. 0000 or 0345, same is not saved properly in the Google Sheet on account of the zeros being dropped.
+
+## **Validator Testing**
+- As mentioned above, I rectified all errors thrown up by the Pep8 linter apart from some of the E501 errors relating to line length. 
+
 
 
 
