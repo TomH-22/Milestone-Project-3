@@ -88,7 +88,7 @@ I also utilised various linters, such as Pep8online, to check the code. While a 
 ## **Validator Testing**
 - As mentioned above, I rectified all errors thrown up by the Pep8 linter apart from some of the E501 errors relating to line length.
 
-## **Deployment** 
+# **Deployment** 
 
 The terminal application was deployed via Heroku, as per the following steps:
 
@@ -99,7 +99,7 @@ The terminal application was deployed via Heroku, as per the following steps:
 - Then head over to the "Deployment" tab, and under "Deployment Method" click on Github to connect same to Heroku.
 - Once logged in and connected, navigate down and either deploy automatically or manually.  
 
-## **Attributions & Inspirations**
+# **Attributions & Inspirations**
 
 - I obtained the relevant rates etc which form the basis of the calculations from the [Citizens' Information](https://www.citizensinformation.ie/en/money_and_tax/tax/income_tax/) website and also took inspiration from the web-based [Tax Calculator](http://services.deloitte.ie/) offered by Deloitte. I used the latter to verify that my calculations were correct. 
 
