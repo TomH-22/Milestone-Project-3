@@ -1,4 +1,5 @@
 import pyfiglet
+from pyfiglet import print_figlet
 import os
 import re
 import time
@@ -23,7 +24,8 @@ def header():
     """
     Prints the Pyfiglet to the terminal.
     """
-    print(pyfiglet.figlet_format("Aerarium"))
+    colors="255;199;0:"
+    print_figlet("Aerarium", font="standard", colors=colors)
 
 
 def subheader():
