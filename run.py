@@ -45,7 +45,7 @@ def thank_you():
     """
     Prints a goodbye message.
     """
-    print("\n\n** THANK YOU FOR USING AERARIUM - GOODBYE! **\n")
+    print("** THANK YOU FOR USING AERARIUM - GOODBYE! **\n\n\n")
 
 
 def exitprog():
@@ -107,7 +107,7 @@ def start_options():
             continue
         else:
             clear()
-            print("\033[0;32mSounds great!\033[00m\n\nLoading...\n")
+            print(f"\033[0;32mSounds great, {name}!\033[00m\n\nLoading...\n")
             loading(1)
             clear()
             choice()
