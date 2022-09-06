@@ -423,7 +423,7 @@ def access_granted():
     """
     Returns the user's saved data from the spreadsheet row, saves the
     values into variables and then prints a summary of the user's
-    data. It then gives the option to exit the program.
+    data. It then gives the option to exit the program also.
     """
     values = userdata.row_values(int(ident) + 1)
 
