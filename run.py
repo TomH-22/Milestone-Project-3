@@ -54,8 +54,8 @@ def exitprog():
     that make up the exit screen.
     """
     os.system('cls' if os.name == 'nt' else 'clear')
-    thank_you()
     header()
+    thank_you()
 
 
 def loading(seconds):
@@ -122,7 +122,7 @@ def choice():
     if int(start_choice) == 1:
         salary()
     else:
-        print(f"Thanks, {name} - let's get your data!\n")
+        print(f"\033[0;32mThanks, {name} - let's get your data!\033[00m\n")
         enter()
 
 
@@ -135,7 +135,7 @@ def name():
     while True:
         global name
         name_input = input("What is your name?\n\n")
-        name = name_input.upper()
+        name = name_input.capitalize()
         if not re.match("^[A-Za-z-hj]*$", name):
             clear()
             print("\033[0;31mPlease try again: use letters only!\n\033[00m")
@@ -320,7 +320,7 @@ def pin_create():
     will be displayed to the user for future reference.
     """
     clear()
-    print(f"\033[0;32mGreat {name}! Let's do that!\033[00m\n\n")
+    print(f"\033[0;32mGreat, {name}! Let's do that!\033[00m\n")
     while True:
         global pin
         pin = (input("Enter a 4-digit pin number:\n\n"))
