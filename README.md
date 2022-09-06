@@ -86,7 +86,24 @@ I also utilised various linters, such as Pep8online, to check the code. While a 
 - When a pin number, consisting of leading zeros is chosen, e.g. 0000 or 0345, same is not saved properly in the Google Sheet on account of the zeros being dropped.
 
 ## **Validator Testing**
-- As mentioned above, I rectified all errors thrown up by the Pep8 linter apart from some of the E501 errors relating to line length. 
+- As mentioned above, I rectified all errors thrown up by the Pep8 linter apart from some of the E501 errors relating to line length.
+
+## **Deployment** 
+
+The terminal application was deployed via Heroku, as per the following steps:
+
+- Create and log into the account on Heroku.  
+- Navigate to New -> Create New App in the top-right corner, and follow the steps accordingly, giving it a name and selecting Europe as region.
+- Once created, navigate to the "Settings" tab and add two KEY:VALUE pairs in the "Config Vars" section: These are CREDS and the content of the creds.json file, and PORT and 8000. 
+- Followign that, in the "Buildpacks" section, add the followign buildpacks in order: heroku/python and heroku/nodejs.
+- Then head over to the "Deployment" tab, and under "Deployment Method" click on Github to connect same to Heroku.
+- Once logged in and connected, navigate down and either deploy automatically or manually.  
+
+## **Attributions**
+
+- All of the images used in this project came from Adobe Stock. The set is titled "Space - set of flat design infographics elements" and is by Boyko.Pictures. I purchased a standard licence for same on [Adobe Stock](https://stock.adobe.com/).
+
+- The Javascript code used to make the application work is based on a tutorial by Marina Ferreira: I utilised some of this code but adjusted and built on it significantly to incorporate a timer, a move counter and the ability create and remove DOM elements based on user actions. The tutorial and associated code can be found on [Github](https://marina-ferreira.github.io/projects/js/memory-game/).
 
 
 
