@@ -442,7 +442,7 @@ def access_granted():
     total_var_int = tax_var_int + prsi_var_int + usc_var_int
     name_var = values[0]
 
-    print(f"Summary of {name_var}'s last calculation:\n\nBased on your inputs, your tax liability is \033[0;33m{tax_var_int:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi_var_int:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc_var_int:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total_var_int:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net_var_int:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly_var_int:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly_var_int:.2f}€\033[00m.\n\n")
+    print(f"Summary of {name_var}'s last calculation:\n\nBased on your inputs, your tax liability is \033[0;33m{tax_var_int:.2f}€\033[00m, \nyour PRSI contributions are \033[0;33m{prsi_var_int:.2f}€\033[00m and your \nUniversal Social Charge is \033[0;33m{usc_var_int:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total_var_int:.2f}€\033[00m, \nleaving you with a net income of \033[0;33m{net_var_int:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly_var_int:.2f}€\033[00m \nor a weekly wage of \033[0;33m{weekly_var_int:.2f}€\033[00m.\n\n")
     input("Press Enter to exit the program.\n\n")
     print("\033[0;32mExiting program...!\n\nThank you!\033[00m\n\n")
     loading(1)
