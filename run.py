@@ -24,7 +24,7 @@ def header():
     """
     Prints the Pyfiglet to the terminal.
     """
-    colors="255;199;0:"
+    colors = "255;199;0:"
     print_figlet("Aerarium", font="standard", colors=colors)
 
 
