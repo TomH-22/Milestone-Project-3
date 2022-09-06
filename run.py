@@ -70,7 +70,7 @@ def intro():
     Prints info about the program and calls the
     name() function.
     """
-    print("This is a python-based finance tool which calculates tax-, PRSI- and USC\n liabilities. \n\nIt is based on the Irish 2021/2022 rates and presently does not account for\n pension deductions, benefit-in-kind scenarios, carer's allowances etc.\n\nThis tool is meant to be used for indicative purposes only.\n")
+    print("This is a python-based finance tool which calculates tax-, PRSI- and USC\nliabilities. \n\nIt is based on the Irish 2021/2022 rates and presently does not account for\npension deductions, benefit-in-kind scenarios, carer's allowances etc.\n\nThis tool is meant to be used for indicative purposes only.\n")
     name()
 
 
@@ -276,7 +276,7 @@ def summary():
     monthly = net / 12
     global weekly
     weekly = net / 52.18
-    print(f"Summary:\n\nBased on your inputs, your tax liability is \033[0;33m{tax:.2f}€\033[00m, your PRSI contributions are \033[0;33m{prsi:.2f}€\033[00m and your Universal Social Charge is \033[0;33m{usc:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total:.2f}€\033[00m, leaving you with a net income of \033[0;33m{net:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly:.2f}€\033[00m or a weekly wage of \033[0;33m{weekly:.2f}€\033[00m.\n")
+    print(f"Summary:\n\nBased on your inputs, your tax liability is \033[0;33m{tax:.2f}€\033[00m, \nyour PRSI contributions are \033[0;33m{prsi:.2f}€\033[00m and your \nUniversal Social Charge is \033[0;33m{usc:.2f}€\033[00m.\n\nThis is a total of \033[0;33m{total:.2f}€\033[00m, leaving you with a net \nincome of \033[0;33m{net:.2f}€\033[00m per year.\n\nThis works out at a monthly wage of \033[0;33m{monthly:.2f}€\033[00m \nor a weekly wage of \033[0;33m{weekly:.2f}€\033[00m.\n")
     end()
 
 
@@ -333,7 +333,7 @@ def pin_create():
             user_data = userdata.col_values(1)
             global set_id
             set_id = len(user_data)
-            print(f"\033[0;32mThank you, {name}, your unique ID is {set_id} and your pin is {pin}! Keep these in a safe place to access your calculation again!\033[00m\n")
+            print(f"\033[0;32mThank you, {name}, your unique ID is {set_id} and your pin is {pin}!\nKeep these in a safe place to access your calculation again!\033[00m\n")
             loading(1)
             break
 
