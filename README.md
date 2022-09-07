@@ -85,6 +85,8 @@ I also utilised various linters, such as Pep8online, to check the code. While a 
 ### **Unsolved Bugs**
 - When a pin number, consisting of leading zeros is chosen, e.g. 0000 or 0345, same is not saved properly in the Google Sheet on account of the zeros being dropped.
 
+- There appears to be a bug in Heroku (but not in GitPod) whereby the header graphic is printed twice when exiting the program but I have not found a fix for it.
+
 ## **Validator Testing**
 - As mentioned above, I rectified all errors thrown up by the Pep8 linter apart from some of the E501 errors relating to line length.
 
