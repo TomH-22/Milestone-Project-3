@@ -1,6 +1,6 @@
 # **Aerarium - A basic Python-based Tax Calculator**
 ## **Description**
-Aerarium is a small program that allows a user to provide a few details relating to their salary and tax status and then calculates and outputs a summary of expected deducations. These are based on accurate Irish 21/22 rates and return values consistent with other such calculators available on the web. 
+Aerarium is a small program that allows a user to provide a few details relating to their salary and tax status and then calculates and outputs a summary of expected deductions. These are based on accurate Irish 21/22 rates and return values consistent with other such calculators available on the web. 
 
 The program allows a user to save their calculations for retrieval at a later date, using a log-in process. 
 
@@ -56,7 +56,7 @@ As mentioned above, data is stored in a Google Sheet for later retrieval by user
 ![Google Sheet](assets/readme/sheet.png)
 
 ### **Personal Touch**
-Great emphasis was placed on user experience, and I felt it was important to provide the user with personalised feedback messages throughout the program's flow: this involved utilising the user's previously inputted name in f-string print reponses and so making the user feel less like they are interacting with a machine.
+Great emphasis was placed on user experience, and I felt it was important to provide the user with personalised feedback messages throughout the program's flow: this involved utilising the user's previously inputted name in f-string print responses and so making the user feel less like they are interacting with a machine.
 
 ### **Input Validation**
 Inputs are intelligently handled and validated in real-time. If inputs are not as expected, e.g. if the name contains spaces or numbers, the user is prompted to re-enter the data before being allowed to proceed. This is achieved using while-loops and conditionals. 
@@ -67,7 +67,7 @@ Inputs are intelligently handled and validated in real-time. If inputs are not a
 
 - **Tax Credits and Other Factors** As I specified in the description, the program currently does not take into consideration aspects such as pension deductions or other pre-tax allowances, so this is something that could be added later. Similarly, rather than having the user input their tax-credits, the value could be derived by means of targeted questions, e.g. about marriage status etc.
 
-- **Restarting the Program** I could not find an elegant way of restaring the program to allow for another calculation at this moment in time, and as a result the user will need to reset the program manually if they wish to do so. This is an important feature to be added in the future. 
+- **Restarting the Program** I could not find an elegant way of restarting the program to allow for another calculation at this moment in time, and as a result the user will need to reset the program manually if they wish to do so. This is an important feature to be added in the future. 
 
 - **Emailing Data** Another nice feature to implement in future iterations of the program involves prompting the user for an email address and sending the data output to it. 
 
@@ -95,7 +95,7 @@ The terminal application was deployed via Heroku, as per the following steps:
 - Create and log into the account on Heroku.  
 - Navigate to New -> Create New App in the top-right corner, and follow the steps accordingly, giving it a name and selecting Europe as region.
 - Once created, navigate to the "Settings" tab and add two KEY:VALUE pairs in the "Config Vars" section: These are CREDS and the content of the creds.json file, and PORT and 8000. 
-- Following that, in the "Buildpacks" section, add the followign buildpacks in order: heroku/python and heroku/nodejs.
+- Following that, in the "Buildpacks" section, add the following buildpacks in order: heroku/python and heroku/nodejs.
 - Then head over to the "Deployment" tab, and under "Deployment Method" click on Github to connect same to Heroku.
 - Once logged in and connected, navigate down and either deploy automatically or manually.  
 
@@ -105,8 +105,4 @@ The terminal application was deployed via Heroku, as per the following steps:
 
 - The Code Institute's Love-Sandwiches code-along showed me how to utilise the Google Sheets API to handle data, and provided a solid foundation to being able to develop this program. 
 
-- In terms of troubleshooting and fixing bugs, the writings on Stack Overflow and W3 Schools provided great insights. 
-
-
-
-
+- In terms of troubleshooting and fixing bugs, the writings on Stack Overflow and W3 Schools provided great insights.
